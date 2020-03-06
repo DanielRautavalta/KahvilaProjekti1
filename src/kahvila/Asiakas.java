@@ -13,7 +13,7 @@ public class Asiakas {
     }
 
     public void otaRaha(int maksu) {
-        this.raha = this.raha - raha;
+        this.raha = this.raha - maksu;
     }
 
 
