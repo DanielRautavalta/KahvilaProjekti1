@@ -1,6 +1,14 @@
-import java.util.*;
 package kahvila;
 
+import java.util.*;
+
 public class Kahvila {
-    ArrayList tuotteet = new ArrayList()
+    ArrayList tuotteet = new ArrayList();
+
+
+
+
+
+
+
 }

@@ -4,9 +4,10 @@ public class Asiakas {
     private int raha;
     public int Asiakas(int raha) {
         this.raha = raha;
+        return raha;
     }
 
-    public int getRaha() {
+    public int tulostaRaha() {
         int raha = this.raha;
         return this.raha;
     }
