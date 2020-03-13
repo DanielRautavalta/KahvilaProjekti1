@@ -26,11 +26,28 @@ import java.util.Scanner;
             }
             while(Auth == true) {
                 System.out.println("Syötä komento:");
-
+                String komento = sc.nextLine();
+                if (komento.equals("Lisää")) {
+                    Lisaa();
+                }
+                else if (komento.equals("Poista")) {
+                    Poista();
+                }
+                else {
+                    System.out.println("Syötit virheellisen komennon:");
+                }
             }
         }
 
 
 
         }
-}
+
+        private static void Poista() {
+
+        }
+
+        private static void Lisaa() {
+
+        }
+    }
