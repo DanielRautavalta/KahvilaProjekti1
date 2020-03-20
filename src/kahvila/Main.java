@@ -1,6 +1,5 @@
 package kahvila;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -10,9 +9,9 @@ import java.util.Scanner;
         Kahvila kahvila = new Kahvila();
         Kahvila tuotteet = new Kahvila();
         Scanner sc = new Scanner(System.in);
-
         while (true) {
-            boolean Auth = false;
+            boolean omistajaAuth = false;
+            boolean asiakasAuth = false;
             System.out.println("Tervetuloa kahvilaan!");
 
             System.out.println("Syötä käyttäjätunnus:");
@@ -22,16 +21,25 @@ import java.util.Scanner;
             String salasana = sc.nextLine();
 
             if (käyttäjä.equals("Omistaja") && (salasana.equals("Salasana"))) {
-                Auth = true;
+                omistajaAuth = true;
             }
-            while(Auth == true) {
+
+            while(omistajaAuth == true) {
                 System.out.println("Syötä komento:");
                 String komento = sc.nextLine();
+
                 if (komento.equals("Lisää")) {
-                    Lisaa();
+                    System.out.println("Minkä niminen on tuote, jonka haluat lisätä?");
+                    String sana = sc.nextLine();
+                    System.out.println("Minkä hintainen on tuote, jonka haluat lisätä");
+                    int hinta = Integer.parseInt(sc.nextLine());
+                    Tuote ast = new Tuote(sana, hinta);
+                    kahvila.LisaaTuote(ast);
+
                 }
+
                 else if (komento.equals("Poista")) {
-                    Poista();
+
                 }
                 else {
                     System.out.println("Syötit virheellisen komennon:");
@@ -43,11 +51,7 @@ import java.util.Scanner;
 
         }
 
-        private static void Poista() {
 
-        }
 
-        private static void Lisaa() {
 
-        }
     }
