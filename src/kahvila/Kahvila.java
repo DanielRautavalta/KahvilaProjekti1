@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Kahvila {
+    // Tuotteiden tallennus
     public List<Tuote> tuotteet;
 
 
@@ -12,24 +13,26 @@ public class Kahvila {
     }
 
 
+
+    //tuotteiden lisäys
     public void LisaaTuote(Tuote c) {
         tuotteet.add(c);
     }
-
-
-    public void poistaTuote(int a) {
-        tuotteet.remove(a);
+    public List<Tuote> getTuotteet() {
+        return tuotteet;
+    }
+// Tuotteen poisto
+        public void poistaTuote(String a) {
+        int index = -1;
+        for (Tuote tuote: tuotteet) {
+            if(tuote.getNimi().equals(a)) {
+                index = tuotteet.indexOf(tuote);
+            }
+        }
     }
 
 
-    public int getIndex(String poisto) {
-        return tuotteet.indexOf(poisto);
-    }
 
-
-    public int suuri() {
-        return tuotteet.size();
-    }
 
 
 
