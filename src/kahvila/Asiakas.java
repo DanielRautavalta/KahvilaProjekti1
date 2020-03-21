@@ -1,21 +1,38 @@
 package kahvila;
-
+import java.util.*;
 public class Asiakas {
     private int raha;
-    public int Asiakas(int raha) {
-        this.raha = raha;
-        return raha;
+
+    public Asiakas() {
+        this.raha = 95;
     }
 
     public int tulostaRaha() {
-        int raha = this.raha;
         return this.raha;
     }
 
-    public void otaRaha(int maksu) {
-        this.raha = this.raha - maksu;
+    public void otaRaha(int maksu, String tuote) {
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Oletko varma että haluat ostaa tuotteen " + tuote + " Syötä vahvistus (K/E)");
+            String vahvistus = sc.nextLine();
+
+            if (vahvistus.equals("K")) {
+                if (raha < maksu) {
+                    System.out.println("Tapahtuma hylätty");
+                    break;
+                } else {
+                    this.raha = raha - maksu;
+                    System.out.println("Tapahtuma hyväksytty");
+                    break;
+                }
+            } else if (vahvistus.equals("E")) {
+                System.out.println("Asiakas perui oston.");
+                break;
+            } else {
+                System.out.println("Syötit virheellisen arvon (K/E).");
+            }
+        }
     }
-
-
-
 }
+

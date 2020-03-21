@@ -62,7 +62,7 @@ class Main {
                     String poisto = sc.nextLine();
                     kahvila.poistaTuote(poisto);
                 } else if (komento.equals("kirjaudu ulos")) {
-                    System.out.println("Poistutaan ohjelmasta...");
+                    System.out.println("Poistutaan järjestelmästä...");
                     System.exit(0);
                 } else {
                     System.out.println("Syötit virheellisen komennon, yritä uudelleen.");
@@ -76,18 +76,28 @@ class Main {
                     System.out.println("Komennot: Osta, Kirjaudu ulos, Saldo, tuotteet");
                     System.out.println("Syötä komento:");
                     String komento = sc.nextLine();
+
                     if (komento.equals("Osta")) {
                         System.out.println("Syötä ostettava tuote:");
                         String ostettavaTuote = sc.nextLine();
                         for (Tuote a : kahvila.getTuotteet()) {
                             if (a.getNimi().equals(ostettavaTuote)) {
-                                asiakas.otaRaha
+                                asiakas.otaRaha(a.getHinta(), a.getNimi());
+                            } else if (komento.equals("saldo")) {
+                                System.out.println("Saldo: " + asiakas.tulostaRaha() + "€");
+                            }
+                            } else if (komento.equals("tuotteet")) {
+                                System.out.println("Tämän hetkiset tuotteet:");
+                                for (Tuote : kahvila.getTuotteet()) {
+                                    System.out.println(Tuote.getNimi() + ", " + Tuote.getHinta() + "€");
+                                }
+                            } else if (komento.equals("kirjaudu ulos")) {
+                                System.out.println("Poistutaan järjestelmästä...");
+                                break;
                             }
                         }
                     }
-
                 }
-
 
             }
         }
