@@ -2,9 +2,7 @@ package kahvila;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 class Main {
-
     public static void main(String[] args) {
         Kahvila kahvila = new Kahvila();
         Asiakas asiakas = new Asiakas();
@@ -88,8 +86,8 @@ class Main {
                             }
                             else if (komento.equals("tuotteet")) {
                             System.out.println("Tämän hetkiset tuotteet:");
-                            for (Tuote : kahvila.getTuotteet()) {
-                                System.out.println(Tuote.getNimi() + ", " + Tuote.getHinta() + "€");
+                            for (Tuote tuote : kahvila.getTuotteet()) {
+                                System.out.println(tuote.getNimi() + ", " + tuote.getHinta() + "€");
                             }
                         } else if (komento.equals("kirjaudu ulos")) {
                             System.out.println("Poistutaan järjestelmästä...");
@@ -103,8 +101,9 @@ class Main {
             }
         }
 
-    }
 
+   }
+}
 
 
 
