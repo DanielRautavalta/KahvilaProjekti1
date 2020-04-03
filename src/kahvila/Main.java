@@ -86,24 +86,25 @@ class Main {
                             } else if (komento.equals("saldo")) {
                                 System.out.println("Saldo: " + asiakas.tulostaRaha() + "€");
                             }
-                            } else if (komento.equals("tuotteet")) {
-                                System.out.println("Tämän hetkiset tuotteet:");
-                                for (Tuote : kahvila.getTuotteet()) {
-                                    System.out.println(Tuote.getNimi() + ", " + Tuote.getHinta() + "€");
-                                }
-                            } else if (komento.equals("kirjaudu ulos")) {
-                                System.out.println("Poistutaan järjestelmästä...");
-                                break;
+                            else if (komento.equals("tuotteet")) {
+                            System.out.println("Tämän hetkiset tuotteet:");
+                            for (Tuote : kahvila.getTuotteet()) {
+                                System.out.println(Tuote.getNimi() + ", " + Tuote.getHinta() + "€");
                             }
+                        } else if (komento.equals("kirjaudu ulos")) {
+                            System.out.println("Poistutaan järjestelmästä...");
+                            break;
                         }
                     }
+                }
+
                 }
 
             }
         }
 
     }
-}
+
 
 
 
